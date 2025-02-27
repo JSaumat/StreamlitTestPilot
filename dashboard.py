@@ -32,7 +32,7 @@ import numpy as np
 # st.image("https://www.nasdaq.com/sites/acquia.prod/files/image/4b6c84393df1ef26f81356305cf5fba0007f8c2b_f9bcaea802f3a0a5afed32f5702d48e7.png")
 
 option = st.sidebar.selectbox(
-    "Which dashboard?", ("Twitter", "wallstreetbets", "stocktwits", "chart", "pattern"),
+    "Which dashboard?", ("twitter", "wallstreetbets", "stocktwits", "chart", "pattern"),
 )
 
 st.header(option)
