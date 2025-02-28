@@ -1,3 +1,4 @@
+import requests
 import streamlit as st
 import pandas as pd
 import numpy as np
@@ -42,3 +43,20 @@ if option == "twitter":
 
 if option == "chart":
     st.subheader("this is the chart dashboard")
+
+if option == "stocktwits":
+
+    st.sidebar.text_input("Symbol", value="AAPL",max_chars=5)
+
+    #st.subheader("stocktwits")
+
+    r = requests.get("https://api.stocktwits.com/api/2/streams/symbol/AAPL.json")
+
+    data = r.json()
+
+    for message in data["messages"]:
+        st.image(message["user"]["avatar_url"])
+        st.write(message["user"]["username"])
+        st.write(message["created_at"])
+        st.write(message["body"])
+
